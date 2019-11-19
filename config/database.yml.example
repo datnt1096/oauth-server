@@ -1,0 +1,17 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  username:
+  password:
+
+development:
+  <<: *default
+  database: oauth-development
+
+test:
+  <<: *default
+  database: oauth-test
+
+production:
+  <<: *default
