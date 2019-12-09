@@ -1,0 +1,69 @@
+<div class="container py-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-center">
+        <%= image_tag user_avatar(current_user), width: "128px", height: "128px", class: "rounded-circle" %>
+      </div>
+      <div class="text-center mt-4">
+        <h1 class="greeting-title">
+          Welcome, Admin Server
+        </h1>
+        <p class="greeting-sub-title">
+          Manage your profile information and security with Oauth Accounts
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row py-4">
+    <div class="mb-2 col-md-4">
+      <a href="#" class="menu-item">
+        <div class="item-card text-center">
+          <div class="item-card_body">
+            <%= image_tag "profile.svg", class: "image" %>
+            <h2 class="card-title mt-4">My Profiles</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="mb-2 col-md-4">
+      <a href="#" class="menu-item">
+        <div class="item-card text-center">
+          <div class="item-card_body">
+            <%= image_tag "connect.svg", class: "image" %>
+            <h2 class="card-title mt-4">Conneted Apps</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="mb-2 col-md-4">
+      <a href="#" class="menu-item">
+        <div class="item-card text-center">
+          <div class="item-card_body">
+            <%= image_tag "password.svg", class: "image" %>
+            <h2 class="card-title mt-4">Password</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="mb-2 col-md-4">
+        <a href="#" class="menu-item">
+          <div class="item-card text-center">
+            <div class="item-card_body">
+              <%= image_tag "develop.svg", class: "image" %>
+              <h2 class="card-title mt-4">Develop</h2>
+            </div>
+          </div>
+        </a>
+      </div>
+    <div class="mb-2 col-md-4">
+      <a href="#" class="menu-item">
+        <div class="item-card text-center">
+          <div class="item-card_body">
+            <%= image_tag "wallet.svg", class: "image" %>
+            <h2 class="card-title mt-4">Wallet</h2>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

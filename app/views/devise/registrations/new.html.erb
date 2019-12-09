@@ -1,34 +1,59 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Oauth Server</title>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+    <div class="login">
+      <div class="container login_box">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="el-card always_shadow">
+              <div class="el-card_body">
+                <div class="mb-4 text-center">
+                  <%= image_tag "oauth2.png", width: "120px" %>
+                </div>
+                <div class="my-4 text-center">
+                  <h5>Đăng ký tài khoản OAuth Server</h5>
+                </div>
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "login-form"}) do |f| %>
+                  <%= render "shared/error_messages", object: resource %>
+                  <div class="el-form-item">
+										<div class="el-input">
+											<label>Email<span class="text-danger">*</span></label>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+										</div>
+                  </div>
+                  <div class="el-form-item">
+										<div class="el-input">
+											<label>Name<span class="text-danger">*</span></label>
+                      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+										</div>
+									</div>
+									<div class="el-form-item">
+										<div class="el-input">
+                      <label>Password<span class="text-danger">*</span></label>
+                      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+										</div>
+                  </div>
+                  <div class="el-form-item">
+										<div class="el-input">
+                      <label>Confirm password<span class="text-danger">*</span></label>
+                      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-primary form-control">Đăng ký</button>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

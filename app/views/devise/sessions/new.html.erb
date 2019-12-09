@@ -1,26 +1,60 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Oauth Server</title>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+    <div class="login">
+      <div class="container login_box">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="el-card always_shadow">
+              <div class="el-card_body">
+                <div class="mb-4 text-center">
+                  <%= image_tag "oauth2.png", width: "120px" %>
+                </div>
+                <div class="my-4 text-center">
+                  <h5>Đăng nhập OAuth Server</h5>
+                </div>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login-form"}) do |f| %>
+                  <div class="el-form-item">
+                    <div class="el-input">
+                      <label>Email<span class="text-danger">*</span></label>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="el-form-item">
+                    <div class="el-input">
+                      <label>Password<span class="text-danger">*</span></label>
+                      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+                    </div>
+                  </div>
+                  <% if devise_mapping.rememberable? %>
+                    <div class="field">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label "Duy trì đăng nhập" %>
+                    </div>
+                  <% end %>
+                  <button type="submit" class="btn btn-primary form-control">Đăng nhập</button>
+                <% end %>
+                <div class="d-flex justify-content-between my-2">
+                  <%= link_to new_password_path(resource_name) do %>
+                    <small>Quên mật khẩu?</small>
+                  <% end %>
+                  <%= link_to new_registration_path(resource_name) do %>
+                    <small>Đăng ký</small>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  </body>
+</html>

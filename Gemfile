@@ -14,6 +14,7 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "devise"
 gem "dotenv-rails"
+gem "font-awesome-sass"
 
 group :development do
   gem "pry", "~> 0.12.2"
