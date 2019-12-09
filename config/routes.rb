@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  root "users#index"
-  devise_for :users
+  root "statics#home"
+  devise_for :users, controllers: {
+    sessions: "sessions",
+    registrations: "registrations",
+    passwords: "passwords"
+  }
 end

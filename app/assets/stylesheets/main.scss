@@ -1,0 +1,305 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@font-face {
+  font-family: 'Roboto';
+  src: asset-url("font/Roboto-Regular.ttf");
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  background-color: #fff;
+}
+
+.login {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.always_shadow {
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login_box {
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login_box .el-card {
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  overflow: hidden;
+  color: #303133;
+}
+
+.login_box .el-card .el-card_body {
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login_box .el-card .el-card_body .el-form-item {
+  margin-bottom: 22px;
+  line-height: 36px;
+}
+
+.login_box .el-card .el-card_body .el-form-item .el-input {
+  vertical-align: middle;
+  line-height: normal;
+  display: inline-table;
+  width: 100%;
+  border-collapse: inherit;
+  border-spacing: 0;
+}
+
+.logo {
+  display: inline-block;
+}
+
+a {
+  background-color: initial;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+i {
+  margin-right: 10px;
+}
+
+.oauth .header {
+  height: 60px;
+  padding: 0 20px;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(27, 27, 27, 0.15) !important;
+          box-shadow: 0 0.5rem 1rem rgba(27, 27, 27, 0.15) !important;
+}
+
+.oauth .header .header-container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.oauth .header .header-container .logo-image {
+  height: 2.75rem;
+}
+
+.oauth .header .header-container .user-menu_top {
+  padding: 0.75rem 1rem;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.oauth .header .header-container .user-menu_top .avatar {
+  height: 2rem;
+}
+
+.oauth .header .header-container .user-menu_top .user-menu__info {
+  margin-bottom: 0.5rem;
+}
+
+.oauth .header .header-container .user-menu_top .btn-edit {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+  font-size: 14px;
+  padding: 3px 5px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.oauth .header .header-container .user-menu__menu-item {
+  font-size: 1rem;
+}
+
+.oauth .header .header-container .user-menu__menu-item:hover {
+  background-color: #f6f6f7;
+}
+
+.oauth .header .header-container .user-menu__menu-item a {
+  display: block;
+  padding: .75rem 1rem;
+  outline: none;
+  color: #606266;
+  text-decoration: none;
+}
+
+.oauth main {
+  padding-top: 1rem;
+}
+
+.oauth main .list-group-item {
+  background-color: #fff;
+  border: none;
+}
+
+.oauth main a.list-group-item {
+  color: #606266;
+  font-size: 18px;
+}
+
+.oauth main a.list-group-item:hover {
+  background-color: #f6f6f7;
+}
+
+.oauth main .list-group-item:first-child,
+.oauth main .list-group-item:last-child {
+  border-radius: 0;
+}
+
+.oauth main .list-group-level1 .list-group-item {
+  padding-left: 30px;
+}
+
+.oauth main .list-group-level2 .list-group-item {
+  padding-left: 60px;
+}
+
+.oauth main .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.oauth main .main-content {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  padding-top: 0;
+  border-left: 1px solid #e6e6e6;
+  min-height: calc(100vh - 60px - 1rem);
+}
+
+.oauth main .main-content .greeting-title {
+  font-size: 1.375rem;
+}
+
+.oauth main .main-content .greeting-sub-title {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.oauth main .main-content .menu-item {
+  text-decoration: none;
+}
+
+.oauth main .main-content .menu-item .item-card {
+  height: 100%;
+  min-height: 128px;
+  background: #dfe6e9;
+  font-size: 1.375rem;
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  overflow: hidden;
+  color: #303133;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.oauth main .main-content .menu-item .item-card:hover {
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.4);
+}
+
+.oauth main .main-content .menu-item .item-card .item-card_body {
+  padding: 20px;
+}
+
+.oauth main .main-content .menu-item .item-card .item-card_body .image {
+  height: 80px;
+  max-width: 100%;
+}
+
+.oauth main .main-content .menu-item .item-card .item-card_body .card-title {
+  font-size: 1.375rem;
+  font-weight: 400;
+}
+
+.oauth main .main-content .oauth-card {
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  overflow: hidden;
+  color: #303133;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.image-cicrle {
+  border-radius: 50%;
+}
+
+.el-card__body {
+  padding: 20px;
+}
+
+.el-card__body .card-title {
+  font-size: 1.375rem;
+  font-weight: 400;
+}
+
+.el-card__body .card-subtitle {
+  font-size: .875rem;
+  padding-top: 0.3rem !important;
+}
+
+.btn-new {
+  color: #409eff;
+  background: #ecf5ff;
+  border: 1px solid #b3d8ff;
+  padding: 9px 15px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.btn-new:hover {
+  background: #409eff;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-delete {
+  color: #f56c6c;
+  background: #fef0f0;
+  border: 1px solid #fbc4c4;
+  padding: 9px 15px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.btn-delete:hover {
+  text-decoration: none;
+  background: #f56c6c;
+  border: 1px solid #f56c6c;
+  color: #fff;
+}
+/*# sourceMappingURL=main.css.map */

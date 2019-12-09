@@ -1,0 +1,36 @@
+<header class="header d-flex align-items-center px-8">
+  <section class="header-container d-flex justify-content-between align-items-center">
+    <div class="logo">
+      <a href="#">
+        <%= image_tag "oauth2.png", class: "logo-image image-cicrle" %>
+      </a>
+    </div>
+    <div class="d-inline-flex align-items-center">
+      <span class="mr-2">Tài khoản: 50000d</span>
+      <span>
+        <div class="dropdown">
+          <%= image_tag user_avatar(current_user), class: "logo-image btn dropdown-toggle image-cicrle", data: {toggle: "dropdown"} %>
+          <div class="dropdown-menu py-0" style="left: -130px;">
+            <div class="user-menu_top d-flex justify-content-between">
+              <%= image_tag user_avatar(current_user), class: "avatar rounded-circle mr-2" %>
+              <div class="flex-fill overflow-hidden">
+                <div class="user-menu__info">
+                  <div class="text-primary font-weight-bold text-truncate mb-2">
+                    Admin Server
+                  </div>
+                  <a href="#" class="btn-edit"><span>Edit</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="user-menu__menu-item">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                  Sign Out
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+  </section>
+</header>
