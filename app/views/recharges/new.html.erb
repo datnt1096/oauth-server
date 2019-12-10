@@ -1,0 +1,19 @@
+<div class="container py-4">
+  <div class="oauth-card">
+    <div class="el-card__body">
+      <h1 class="card-title">
+        Thêm yêu cầu nạp tiền
+      </h1>
+    </div>
+    <%= form_for @recharge, html: {class: "px-3 pb-2"} do |f| %>
+      <%= render "shared/error_messages", object: @recharge %>
+      <div class="form-group">
+        <label for="">Số tiền</label>
+        <%= f.number_field :amount, class: "form-control" %>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-success">Tạo mới</button>
+      </div>
+    <% end %>
+  </div>
+</div>

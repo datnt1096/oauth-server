@@ -1,0 +1,26 @@
+<div class="container py-4">
+  <div class="oauth-card">
+    <div class="el-card__body">
+      <h1 class="card-title d-flex justify-content-between">
+        <span>Danh sách yêu cầu nạp tiền</span>
+        <div class="d-inline-block">
+          <%= link_to "Thêm yêu cầu mới", new_recharge_path, class: "btn-new" %>
+        </div>
+      </h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Trạng thái</th>
+          <th scope="col">Số tiền</th>
+          <th scope="col">Tạo lúc</th>
+          <th scope="col">Cập nhật</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @recharges %>
+      </tbody>
+    </table>
+  </div>
+</div>

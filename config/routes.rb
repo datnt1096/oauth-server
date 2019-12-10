@@ -14,7 +14,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :oauth_apps
+  resources :oauth_apps do
+    get "secret_keys", on: :member
+  end
   resources :authorizations
-  resources :recharges
+  resources :recharges do
+    collection do
+      get "pending"
+      get "done"
+    end
+  end
 end

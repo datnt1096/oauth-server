@@ -1,0 +1,8 @@
+<tr>
+  <th scope="row"><%= app_counter + 1 %></th>
+  <td><%= link_to app.name, edit_oauth_app_path(app), class: "no_underline" %></td>
+  <td><%= app.id %></td>
+  <td><%= format_date(app.created_at) %></td>
+  <td><%= link_to "<i class='fa fa-trash'></i>Delete".html_safe, oauth_app_path(app), method: :delete,
+    class: "btn-delete", data: {confirm: "Chắc chắn xóa?"} %></td>
+</tr>
