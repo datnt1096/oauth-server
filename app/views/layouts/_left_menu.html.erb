@@ -1,12 +1,20 @@
 <div class="col-md-2">
   <div class="list-group">
-    <a href="#" class="list-group-item">
-      <i class="fa fa-home"></i>Home
-    </a>
-    <a href="#sub-menu-1" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><i class="fa fa-id-card"></i>My Profile <span class="caret"></span></a>
+    <%= link_to "<i class='fa fa-home'></i>Trang chủ".html_safe, root_path, class: "list-group-item" %>
+    <a href="#sub-menu-1" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><i class="fa fa-id-card"></i>Quản lý thông tin <span class="caret"></span></a>
     <div class="collapse list-group-level1" id="sub-menu-1">
-      <a href="#" class="list-group-item" data-parent="#sub-menu">Sub Item 1</a>
-      <a href="#" class="list-group-item" data-parent="#sub-menu">Sub Item 2</a>
+      <a href="<%= edit_user_path(current_user) %>" class="list-group-item" data-parent="#sub-menu"><i class="fa fa-user"></i> Thông tin cá nhân</a>
+      <a href="<%= password_user_path(current_user) %>" class="list-group-item" data-parent="#sub-menu"><i class="fa fa-key"></i> Đổi mật khẩu</a>
     </div>
+    <%= link_to "<i class='fa fa-tasks'></i>Ứng dụng đã ủy quền".html_safe, authorizations_path, class: "list-group-item" %>
+    <%= link_to "<i class='fa fa-cog'></i>Quản lý ứng dụng".html_safe, oauth_apps_path, class: "list-group-item" %>
+    <%= link_to "<i class='fa fa-dollar-sign'></i>Nạp tiền".html_safe, recharges_path, class: "list-group-item" %>
+    <% if current_user.admin? %>
+      <a href="#sub-menu-2" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><i class="fa fa-money-check-alt"></i>Quản lý yêu cầu nạp tiền <span class="caret"></span></a>
+      <div class="collapse list-group-level1" id="sub-menu-2">
+        <a href="<%= edit_user_path(current_user) %>" class="list-group-item" data-parent="#sub-menu"><i class="fa fa-sync"></i> Đang chờ duyệt</a>
+        <a href="<%= password_user_path(current_user) %>" class="list-group-item" data-parent="#sub-menu"><i class="fa fa-check"></i> Đã duyệt</a>
+      </div>
+    <% end %>
   </div>
 </div>

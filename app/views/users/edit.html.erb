@@ -1,0 +1,33 @@
+<div class="container py-4">
+  <div class="oauth-card">
+    <div class="el-card__body">
+      <h1 class="card-title">
+        Thông tin cá nhân
+      </h1>
+      <p class="card-subtitle">
+        Quản lý thông tin cá nhân và thông tin liên lạc.
+      </p>
+    </div>
+    <div class="d-flex justify-content-center mt-2">
+      <%= image_tag user_avatar(current_user), width: "128px", height: "128px", class: "rounded-circle" %>
+    </div>
+    <%= form_for current_user, html: {class: "px-3 pb-2"} do |f| %>
+      <%= render "shared/error_messages", object: current_user %>
+      <div class="form-group">
+        <label for="">Email</label>
+        <%= f.email_field :email, class: "form-control", disabled: true %>
+      </div>
+      <div class="form-group">
+        <label for="">Name</label>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="">Avatar</label>
+        <%= f.file_field :image, class: "form-control", accept: "image/*" %>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-success">Lưu</button>
+      </div>
+    <% end %>
+  </div>
+</div>

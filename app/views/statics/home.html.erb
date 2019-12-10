@@ -16,7 +16,7 @@
   </div>
   <div class="row py-4">
     <div class="mb-2 col-md-4">
-      <a href="#" class="menu-item">
+      <a href="<%= edit_user_path(current_user) %>" class="menu-item">
         <div class="item-card text-center">
           <div class="item-card_body">
             <%= image_tag "profile.svg", class: "image" %>
@@ -26,7 +26,7 @@
       </a>
     </div>
     <div class="mb-2 col-md-4">
-      <a href="#" class="menu-item">
+      <a href="<%= authorizations_path %>" class="menu-item">
         <div class="item-card text-center">
           <div class="item-card_body">
             <%= image_tag "connect.svg", class: "image" %>
@@ -36,7 +36,7 @@
       </a>
     </div>
     <div class="mb-2 col-md-4">
-      <a href="#" class="menu-item">
+      <a href="<%= password_user_path(current_user) %>" class="menu-item">
         <div class="item-card text-center">
           <div class="item-card_body">
             <%= image_tag "password.svg", class: "image" %>
@@ -46,7 +46,7 @@
       </a>
     </div>
     <div class="mb-2 col-md-4">
-        <a href="#" class="menu-item">
+        <a href="<%= oauth_apps_path %>" class="menu-item">
           <div class="item-card text-center">
             <div class="item-card_body">
               <%= image_tag "develop.svg", class: "image" %>
@@ -56,7 +56,7 @@
         </a>
       </div>
     <div class="mb-2 col-md-4">
-      <a href="#" class="menu-item">
+      <a href="<%= recharges_path %>" class="menu-item">
         <div class="item-card text-center">
           <div class="item-card_body">
             <%= image_tag "wallet.svg", class: "image" %>
