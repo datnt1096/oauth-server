@@ -1,0 +1,29 @@
+<div class="container py-4">
+  <div class="oauth-card">
+    <div class="el-card__body">
+      <h1 class="card-title d-flex justify-content-between">
+        <span>Danh sách Oauth Apps</span>
+        <div class="d-inline-block">
+          <%= link_to "Thêm ứng dụng mới", new_oauth_app_path, class: "btn-new" %>
+        </div>
+      </h1>
+      <p class="card-subtitle">
+        Quản lý các ứng dụng của bạn ở đây.
+      </p>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tên App</th>
+          <th scope="col">App ID</th>
+          <th scope="col">Tạo lúc</th>
+          <th scope="col">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "oauth_apps/app", collection: @apps, as: :app %>
+      </tbody>
+    </table>
+  </div>
+</div>

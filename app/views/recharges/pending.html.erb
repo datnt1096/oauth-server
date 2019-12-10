@@ -1,0 +1,38 @@
+<div class="container py-4">
+  <div class="oauth-card">
+    <div class="el-card__body">
+      <h1 class="card-title d-flex">
+        <span>Danh sách yêu cầu nạp tiền đang chờ</span>
+      </h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Id người dùng</th>
+          <th scope="col">Người dùng</th>
+          <th scope="col">Trạng thái</th>
+          <th scope="col">Số tiền</th>
+          <th scope="col">Tạo lúc</th>
+          <th scope="col">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recharges.each.with_index do |recharge, index| %>
+          <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= recharge.user.id %></td>
+            <td><%= recharge.user.name %></td>
+            <td><%= recharge_status(recharge.status) %></td>
+            <td><%= recharge.amount %>đ</td>
+            <td><%= format_date(recharge.created_at) %></td>
+            <td>
+              <%= link_to "Chấp nhận", recharge_path(recharge), method: :patch, class: "btn-new" %>
+              <%= link_to "Từ chối", recharge_path(recharge), method: :delete, class: "btn-delete" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

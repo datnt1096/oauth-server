@@ -12,8 +12,8 @@
     <% if current_user.admin? %>
       <a href="#sub-menu-2" class="list-group-item" data-toggle="collapse" data-parent="#main-menu"><i class="fa fa-money-check-alt"></i>Quản lý yêu cầu nạp tiền <span class="caret"></span></a>
       <div class="collapse list-group-level1" id="sub-menu-2">
-        <a href="<%= edit_user_path(current_user) %>" class="list-group-item" data-parent="#sub-menu"><i class="fa fa-sync"></i> Đang chờ duyệt</a>
-        <a href="<%= password_user_path(current_user) %>" class="list-group-item" data-parent="#sub-menu"><i class="fa fa-check"></i> Đã duyệt</a>
+        <a href="<%= pending_recharges_path %>" class="list-group-item" data-parent="#sub-menu"><i class="fa fa-sync"></i> Đang chờ duyệt</a>
+        <a href="<%= done_recharges_path %>" class="list-group-item" data-parent="#sub-menu"><i class="fa fa-check"></i> Đã duyệt</a>
       </div>
     <% end %>
   </div>
