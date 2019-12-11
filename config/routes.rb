@@ -17,7 +17,13 @@ Rails.application.routes.draw do
   resources :oauth_apps do
     get "secret_keys", on: :member
   end
-  resources :authorizations
+  resources :authorizations, only: %i(index new create destroy)
+
+  scope :oauth do
+    get "authorize", to: "authorizations#authorize"
+    post "token", to: "authorizations#token"
+  end
+
   resources :recharges do
     collection do
       get "pending"

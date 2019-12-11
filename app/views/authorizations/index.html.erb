@@ -1,0 +1,35 @@
+<div class="container py-4">
+  <div class="oauth-card">
+    <div class="el-card__body">
+      <h1 class="card-title d-flex">
+        <span>Danh sách ứng dụng đang ủy quyền</span>
+      </h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Id ứng dụng</th>
+          <th scope="col">Tên ứng dụng</th>
+          <th scope="col">Ngày ủy quyền</th>
+          <th scope="col">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @authorizations.each.with_index do |authorize, index| %>
+          <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= authorize.oauth_app.id %></td>
+            <td><%= authorize.oauth_app.name %></td>
+            <td><%= format_date(authorize.created_at) %></td>
+            <td>
+              <%= link_to "<i class='fa fa-trash'></i> Xóa".html_safe,
+                authorization_path(authorize),method: :delete, class: "btn-delete",
+                data: {confirm: "Chắc chắn xóa?"} %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

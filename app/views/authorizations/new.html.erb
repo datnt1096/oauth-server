@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Oauth Server</title>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+    <div class="login">
+      <div class="container login_box">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="el-card always_shadow">
+              <div class="el-card_body">
+                <div class="mb-4 text-center">
+                  <%= image_tag "oauth2.png", width: "120px" %>
+                </div>
+                <div class="my-4 text-center">
+                  <h5>Ủy quyền ứng dụng</h5>
+                </div>
+                <div>Tên ứng dụng: <%= @app.name %></div>
+                <div>Mô tả:</div>
+                <p><%= @app.description %></p>
+                <%= form_for(@authorization, html: {class: "login-form"}) do |f| %>
+                  <%= hidden_field_tag :client_id, @app.id %>
+                  <div class="d-flex justify-content-between my-2">
+                    <%= f.submit "Accept", class: "btn btn-new" %>
+                    <%= f.submit "Cancel", class: "btn btn-delete" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

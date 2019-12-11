@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2019_12_10_074743) do
   create_table "authorizations", force: :cascade do |t|
     t.bigint "user_id"
     t.uuid "oauth_app_id"
+    t.string "authorize_code"
+    t.string "token"
+    t.string "token_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["oauth_app_id"], name: "index_authorizations_on_oauth_app_id"
@@ -32,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_12_10_074743) do
     t.string "secret_key", null: false
     t.text "description"
     t.string "callback_url", null: false
+    t.string "token"
+    t.datetime "token_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_oauth_apps_on_user_id"
