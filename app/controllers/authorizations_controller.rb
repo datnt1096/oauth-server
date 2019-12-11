@@ -14,7 +14,7 @@ class AuthorizationsController < ApplicationController
   end
 
   def create
-    if params[:commit].eql?("Accept")
+    if params[:button].eql?("accept")
       current_user.authorizations.create oauth_app: @app
       url = session.delete :user_redirect_back
       redirect_to url
@@ -79,11 +79,15 @@ class AuthorizationsController < ApplicationController
     if authorization.present?
       token = SecureRandom.hex(30)
       authorization.update token: token, token_created_at: Time.now, authorize_code: nil
-      render_response({access_token: token, expires_in: 7.days.from_now.to_s}, 200)
+      render_response({access_token: token, expires_in: 7.days.from_now.to_i}, 200)
     else
+      render_response({}, 401)
     end
   end
 
   def client_credentials_grant
+    token = SecureRandom.hex(35)
+    @app.update token: token, token_created_at: Time.now
+    render_response({token: token, expires_in: 7.days.from_now.to_i}, 200)
   end
 end
