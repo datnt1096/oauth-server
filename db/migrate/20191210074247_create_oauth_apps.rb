@@ -7,6 +7,8 @@ class CreateOauthApps < ActiveRecord::Migration[5.2]
       t.string :secret_key, null: false
       t.text :description
       t.string :callback_url, null: false
+      t.string :token
+      t.datetime :token_created_at
 
       t.timestamps
     end
