@@ -22,13 +22,18 @@
                   <h5>Ủy quyền ứng dụng</h5>
                 </div>
                 <div>Tên ứng dụng: <%= @app.name %></div>
+                <div>Trang chủ: <%= link_to @app.home_page, @app.home_page %></div>
                 <div>Mô tả:</div>
                 <p><%= @app.description %></p>
                 <%= form_for(@authorization, html: {class: "login-form"}) do |f| %>
                   <%= hidden_field_tag :client_id, @app.id %>
                   <div class="d-flex justify-content-between my-2">
-                    <%= f.submit "Accept", class: "btn btn-new" %>
-                    <%= f.submit "Cancel", class: "btn btn-delete" %>
+                    <%= button_tag type: :submit, value: "accept", class: "btn btn-new" do %>
+                      <span>Đồng ý</span>
+                    <% end %>
+                    <%= button_tag type: :submit, value: "cancel", class: "btn btn-delete" do %>
+                      <span>Từ chối</span>
+                    <% end %>
                   </div>
                 <% end %>
               </div>
