@@ -15,6 +15,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "devise"
 gem "dotenv-rails"
 gem "font-awesome-sass"
+gem "cloudinary"
 
 group :development do
   gem "pry", "~> 0.12.2"
